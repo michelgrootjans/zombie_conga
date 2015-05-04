@@ -12,4 +12,9 @@ public class CatController : MonoBehaviour {
 		Destroy( gameObject ); 
 	}
 
+	public void JoinConga() {
+		collider2D.enabled = false;
+		GetComponent<Animator>().SetBool( "InConga", true );
+	}
+
 }
