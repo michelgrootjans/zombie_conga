@@ -13,7 +13,7 @@ public class CatController : MonoBehaviour {
 	}
 
 	public void JoinConga() {
-		collider2D.enabled = false;
+		GetComponent<Collider2D>().enabled = false;
 		GetComponent<Animator>().SetBool( "InConga", true );
 	}
 
