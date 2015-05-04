@@ -57,7 +57,7 @@ public class ZombieController : MonoBehaviour {
 	{
 		if(other.CompareTag("cat")) {
 			Transform followTarget = congaLine.Count == 0 ? transform : congaLine[congaLine.Count-1];
-			other.GetComponent<CatController>().JoinConga( followTarget, moveSpeed, turnSpeed );
+			other.transform.parent.GetComponent<CatController>().JoinConga( followTarget, moveSpeed, turnSpeed );
 			congaLine.Add( other.transform );
 		}
 		else if (other.CompareTag("enemy")) {
