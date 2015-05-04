@@ -7,6 +7,7 @@ public class CatController : MonoBehaviour {
 	private float moveSpeed; 
 	private float turnSpeed; 
 	private bool isZombie;
+	private Vector3 targetPosition;
 
 	void GrantCatTheSweetReleaseOfDeath()
 	{
