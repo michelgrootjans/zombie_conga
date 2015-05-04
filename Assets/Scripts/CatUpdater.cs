@@ -18,4 +18,8 @@ public class CatUpdater : MonoBehaviour {
 		catController.OnBecameInvisible();
 	}
 
+	void GrantCatTheSweetReleaseOfDeath(){
+		catController.GrantCatTheSweetReleaseOfDeath ();
+	}
+
 }
