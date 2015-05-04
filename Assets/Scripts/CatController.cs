@@ -7,4 +7,9 @@ public class CatController : MonoBehaviour {
 	{
 		DestroyObject( gameObject );
 	}
+
+	void OnBecameInvisible() {
+		Destroy( gameObject ); 
+	}
+
 }
