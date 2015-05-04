@@ -17,6 +17,6 @@ public class ZombieAnimator : MonoBehaviour {
 	void Update () {
 		int index = (int)(Time.timeSinceLevelLoad * framesPerSecond);
 		index = index % sprites.Length;
-		spriteRenderer.sprite = sprites [index];
+		spriteRenderer.sprite = sprites[ index ];
 	}
 }

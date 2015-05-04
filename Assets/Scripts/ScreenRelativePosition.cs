@@ -19,30 +19,28 @@ public class ScreenRelativePosition : MonoBehaviour {
 		{
 			// 3
 		case ScreenEdge.RIGHT:
-			newPosition.x = xOffset + camera.aspect * camera.orthographicSize;
-			newPosition.y = yOffset;
-			break;
-			
-			// 3
-		case ScreenEdge.LEFT:
-			newPosition.x = xOffset - camera.aspect * camera.orthographicSize;
+			newPosition.x = camera.aspect * camera.orthographicSize + xOffset;
 			newPosition.y = yOffset;
 			break;
 			
 			// 4
 		case ScreenEdge.TOP:
-			newPosition.y = yOffset + camera.orthographicSize;
+			newPosition.y = camera.orthographicSize + yOffset;
 			newPosition.x = xOffset;
 			break;
-			
-			// 4
+
+		case ScreenEdge.LEFT:
+			newPosition.x = -camera.aspect * camera.orthographicSize + xOffset;
+			newPosition.y = yOffset;
+			break;
+
 		case ScreenEdge.BOTTOM:
-			newPosition.y = yOffset - camera.orthographicSize;
+			newPosition.y = -camera.orthographicSize + yOffset;
 			newPosition.x = xOffset;
 			break;
 		}
 		// 5
-		transform.position = newPosition;
+		transform.position = newPosition;	
 	}
 	
 	// Update is called once per frame
