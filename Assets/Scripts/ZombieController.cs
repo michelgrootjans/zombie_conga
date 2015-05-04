@@ -98,7 +98,7 @@ public class ZombieController : MonoBehaviour {
 			}
 			if (--lives <= 0) {
 				Debug.Log("You lost!");
-				Application.LoadLevel("CongaScene");
+				Application.LoadLevel("LooseScene");
 			}
 		}
 	}
