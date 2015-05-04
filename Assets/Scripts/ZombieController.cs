@@ -83,7 +83,7 @@ public class ZombieController : MonoBehaviour {
 			congaLine.Add( other.transform );
 			if (congaLine.Count >= 5) {
 				Debug.Log("You won!");
-				Application.LoadLevel("CongaScene");
+				Application.LoadLevel("WinScene");
 			}
 		}
 		else if(!isInvincible && other.CompareTag("enemy")) {
