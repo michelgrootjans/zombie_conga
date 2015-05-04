@@ -18,6 +18,10 @@ public class ZombieController : MonoBehaviour {
 	private float timeSpentInvincible;
 	private int lives = 3;
 
+	public AudioClip enemyContactSound;
+	public AudioClip catContactSound;
+
+
 	// Use this for initialization
 	void Start () {
 		moveDirection = Vector3.right;
@@ -78,6 +82,7 @@ public class ZombieController : MonoBehaviour {
 	void OnTriggerEnter2D( Collider2D other )
 	{
 		if(other.CompareTag("cat")) {
+			GetComponent<AudioSource>().PlayOneShot(catContactSound);
 			Transform followTarget = congaLine.Count == 0 ? transform : congaLine[congaLine.Count-1];
 			other.transform.parent.GetComponent<CatController>().JoinConga( followTarget, moveSpeed, turnSpeed );
 			congaLine.Add( other.transform );
@@ -86,6 +91,7 @@ public class ZombieController : MonoBehaviour {
 			}
 		}
 		else if(!isInvincible && other.CompareTag("enemy")) {
+			GetComponent<AudioSource>().PlayOneShot(enemyContactSound);
 			isInvincible = true;
 			timeSpentInvincible = 0;
 			for( int i = 0; i < 2 && congaLine.Count > 0; i++ )
