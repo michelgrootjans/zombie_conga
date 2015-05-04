@@ -24,7 +24,7 @@ public class CatController : MonoBehaviour {
 		{
 			//2
 			Vector3 currentPosition = transform.position;            
-			Vector3 moveDirection = followTarget.position - currentPosition;
+			Vector3 moveDirection = targetPosition - currentPosition;
 			
 			//3
 			float targetAngle = 
@@ -54,7 +54,7 @@ public class CatController : MonoBehaviour {
 	public void JoinConga( Transform followTarget, float moveSpeed, float turnSpeed ) {
 		//2
 		this.followTarget = followTarget;
-		this.moveSpeed = moveSpeed;
+		this.moveSpeed = moveSpeed * 2f;
 		this.turnSpeed = turnSpeed;
 		
 		//3
@@ -62,7 +62,15 @@ public class CatController : MonoBehaviour {
 		
 		//4
 		GetComponent<Collider2D>().enabled = false;
-		GetComponent<Animator>().SetBool( "InConga", true );	}
+		GetComponent<Animator>().SetBool( "InConga", true );	
 
+		UpdateTargetPosition();
+	}
+
+	void UpdateTargetPosition()
+	{
+		Debug.Log("Updating targetposition to " + followTarget.position);
+		targetPosition = followTarget.position;
+	}
 
 }

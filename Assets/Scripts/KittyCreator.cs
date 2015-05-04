@@ -14,7 +14,6 @@ public class KittyCreator : MonoBehaviour {
 	//3
 	void SpawnCat()
 	{
-		Debug.Log("TODO: Birth a cat at " + Time.timeSinceLevelLoad);
 		Invoke("SpawnCat", Random.Range(minSpawnTime, maxSpawnTime));
 
 		// 1
