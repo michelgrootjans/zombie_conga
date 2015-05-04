@@ -16,7 +16,7 @@ public class ZombieController : MonoBehaviour {
 
 	private bool isInvincible = false;
 	private float timeSpentInvincible;
-
+	private int lives = 3;
 
 	// Use this for initialization
 	void Start () {
@@ -95,6 +95,10 @@ public class ZombieController : MonoBehaviour {
 				Transform cat = congaLine[ lastIdx ];
 				congaLine.RemoveAt(lastIdx);
 				cat.parent.GetComponent<CatController>().ExitConga();
+			}
+			if (--lives <= 0) {
+				Debug.Log("You lost!");
+				Application.LoadLevel("CongaScene");
 			}
 		}
 	}
