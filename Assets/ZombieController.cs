@@ -66,11 +66,9 @@ public class ZombieController : MonoBehaviour {
 			moveDirection.x = -moveDirection.x;
 		}
 		// vertical bounds
-		float yDist = mainCamera.orthographicSize; 
-		float yMax = cameraPosition.y + yDist;
-		float yMin = cameraPosition.y - yDist;
-		if ( newPosition.y < yMin || newPosition.y > yMax ) {
-			newPosition.y = Mathf.Clamp( newPosition.y, yMin, yMax );
+		float yMax = mainCamera.orthographicSize;
+		if ( newPosition.y < -yMax || newPosition.y > yMax ) {
+			newPosition.y = Mathf.Clamp( newPosition.y, -yMax, yMax );
 			moveDirection.y = -moveDirection.y;
 		}
 
